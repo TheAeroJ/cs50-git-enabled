@@ -118,6 +118,9 @@ bool vote(int rank, string name, int ranks[])
                 return false;
             }
         }
+        // Set the value of ranks[i] equal to the candidate_id.
+        ranks[i] = candidate_id;
+        return true;
 
     }
     return false;
