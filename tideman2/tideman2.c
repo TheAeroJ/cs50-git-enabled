@@ -108,19 +108,19 @@ bool vote(int rank, string name, int ranks[])
         if strcasecmp(name, candidates[i]) == 0
         {
             candidate_id = i;
-        }
-        // Make sure the newly-determined candidate_id doesn't appear anywhere else in the ranks[] array
-        for (int j = 0; j < candidate_count; j++)
-        {
-            if (ranks[j] == candidate_id)
+            // Make sure the newly-determined candidate_id doesn't appear anywhere else in the ranks[] array
+            for (int j = 0; j < candidate_count; j++)
             {
-                printf("Invalid vote!\n");
-                return false;
+                if (ranks[j] == candidate_id)
+                {
+                    printf("Invalid vote!\n");
+                    return false;
+                }
             }
+            // Set the value of ranks[i] equal to the candidate_id.
+            ranks[i] = candidate_id;
+            return true;
         }
-        // Set the value of ranks[i] equal to the candidate_id.
-        ranks[i] = candidate_id;
-        return true;
 
     }
     return false;
