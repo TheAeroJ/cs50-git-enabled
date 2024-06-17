@@ -114,7 +114,8 @@ bool vote(int rank, string name, int ranks[])
         {
             if (ranks[j] == candidate_id)
             {
-                return false
+                printf("Invalide vote!\n");
+                return false;
             }
         }
 
