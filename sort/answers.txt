@@ -1,0 +1,11 @@
+sort1 uses: BUBBLE SORT
+
+How do you know?: We know that Bubble Sort has O(n^2) and Ω(n), which means that the best-case scenario (i.e. the sorted list) should have a significantly-lower runtime than the random or reversed lists. We see this to be the case, as the sorted list of 50,000 completes in only .511s on Sort1, whereas on Random and Reversed lists the runtime was greater than 5s.
+
+sort2 uses: MERGE SORT
+
+How do you know?: We know that Merge Sort will perform better than either Selection Sort or Bubble Sort, especially as n grows significantly larger, since its worst-case performance is O(n log n) versus selection and bubble sort, which both have O(n^2). This is shown pretty obviously by the text files with 50,000 numbers, where Sort2 never exceeded .57s, and both Sort1 and Sort3 performed in the worst case several seconds slower.
+
+sort3 uses: SELECTION SORT
+
+How do you know?: We know that Selection Sort has both O(n^2) and Ω(n^2); considering that even on the sorted list of 50,000 numbers, Sort3 took several times longer than Sort1 and Sort2 to complete, demonstrating that its best-case performance is on a similar order to its worst-case performance; in fact, Sort3 was relatively consistent: completing random, reversed, and sorted lists of 50,000 elements in 2.377, 2.535, and 2.31 seconds, respectively.
