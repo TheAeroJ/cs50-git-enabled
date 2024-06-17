@@ -109,6 +109,14 @@ bool vote(int rank, string name, int ranks[])
         {
             candidate_id = i;
         }
+        // Make sure the newly-determined candidate_id doesn't appear anywhere else in the ranks[] array
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (ranks[j] == candidate_id)
+            {
+                return false
+            }
+        }
 
     }
     return false;
