@@ -102,6 +102,14 @@ bool vote(int rank, string name, int ranks[])
     // Check to see whether name matches one of the candidates (case notwithstanding) and if so, which candidate (i.e. what is the index of the candidate)
     //Create a placeholder int to hold the candidate ID of our validated known-good candidate.
     int candidate_id;
+    // Check whether ranks[rank + 1] is empty
+    // Check whether rank > candidate_count
+    if (rank > candidate_count)
+    {
+        printf("Invalid vote! Too many candidates!\n");
+        return false;
+    }
+
     for (int i = 0; i < candidate_count; i++)
     {
         //Check whether name and candidates[i] match
