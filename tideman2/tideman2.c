@@ -106,7 +106,6 @@ bool vote(int rank, string name, int ranks[])
     // Check whether rank > candidate_count
     if (rank > candidate_count)
     {
-        printf("Invalid vote! Too many candidates!\n");
         return false;
     }
 
