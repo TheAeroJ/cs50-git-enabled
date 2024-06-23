@@ -103,7 +103,10 @@ bool vote(int rank, string name, int ranks[])
     //Create a placeholder int to hold the candidate ID of our validated known-good candidate.
     int candidate_id;
     // Check whether ranks[rank + 1] is empty
-    if rans[rank + 1]
+    if rank[rank] != NULL
+    {
+        return false;
+    }
     // Check whether rank > candidate_count
     if (rank > candidate_count)
     {
