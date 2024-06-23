@@ -70,8 +70,7 @@ int main(int argc, string argv[])
     for (int i = 0; i < voter_count; i++)
     {
         // ranks[i] is voter's ith preference
-        int ranks[candidate_count] = { NULL };
-
+        int ranks[candidate_count];
         // Query for each rank
         for (int j = 0; j < candidate_count; j++)
         {
@@ -101,10 +100,11 @@ bool vote(int rank, string name, int ranks[])
 {
     // Check to see whether name matches one of the candidates (case notwithstanding) and if so, which candidate (i.e. what is the index of the candidate)
     //Create a placeholder int to hold the candidate ID of our validated known-good candidate.
-    int candidate_id;
+    int candidate_id = candidate_count + 1;
     // Check whether ranks[rank + 1] is empty
-    if rank[rank] != NULL
+    if (ranks[rank] != candidate_count + 1)
     {
+        printf("Err: value of the index of ranks at %i is not equal to %i", rank, candidate_count + 1);
         return false;
     }
     // Check whether rank > candidate_count
@@ -116,7 +116,7 @@ bool vote(int rank, string name, int ranks[])
     for (int i = 0; i < candidate_count; i++)
     {
         //Check whether name and candidates[i] match
-        if strcasecmp(name, candidates[i]) == 0
+        if (strcasecmp(name, candidates[i]) == 0)
         {
             candidate_id = i;
             // Make sure the newly-determined candidate_id doesn't appear anywhere else in the ranks[] array
